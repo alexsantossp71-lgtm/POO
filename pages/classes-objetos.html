@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes e Objetos - POO Java</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .content-section { padding: 60px 0; }
+        .code-block { background: #1e293b; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: monospace; color: #e2e8f0; margin: 20px 0; border: 1px solid #334155; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; margin-bottom: 40px; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .concept-card { max-width: 100%; cursor: default; transform: none; }
+        .concept-card:hover { transform: none; box-shadow: none; border-color: var(--border-color); }
+        ul { margin-left: 20px; color: var(--text-gray); margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <section class="hero" style="min-height: 40vh;">
+        <div class="hero-background"></div>
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Voltar para Home
+            </a>
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 10px;">Classes e Objetos</h1>
+            <p class="hero-subtitle">A base da Programação Orientada a Objetos.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="concept-card">
+                <h2>O que são?</h2>
+                <p><strong>Classes</strong> são como "moldes" ou "plantas" que definem a estrutura e o comportamento de objetos. Elas especificam quais atributos (dados) e métodos (ações) os objetos criados a partir dela terão.</p>
+                <p><strong>Objetos</strong> são instâncias dessas classes. Se a classe é a planta de uma casa, o objeto é a casa construída em si. Você pode criar múltiplos objetos a partir de uma única classe, cada um com seus próprios valores para os atributos.</p>
+                
+                <h3>Exemplo em Java</h3>
+                <div class="code-block">
+<pre>
+// Definição da Classe
+public class Carro {
+    // Atributos (Características)
+    String modelo;
+    String cor;
+    int ano;
+
+    // Métodos (Comportamentos)
+    void acelerar() {
+        System.out.println("O " + modelo + " está acelerando: Vrum vrum!");
+    }
+    
+    void frear() {
+        System.out.println("O " + modelo + " parou.");
+    }
+}
+
+// Classe Principal para testar
+public class Main {
+    public static void main(String[] args) {
+        // Instanciando objetos (Criando carros)
+        Carro carro1 = new Carro();
+        carro1.modelo = "Fusca";
+        carro1.cor = "Azul";
+        carro1.ano = 1975;
+
+        Carro carro2 = new Carro();
+        carro2.modelo = "Ferrari";
+        carro2.cor = "Vermelho";
+        carro2.ano = 2023;
+
+        // Usando os objetos
+        carro1.acelerar(); // Saída: O Fusca está acelerando: Vrum vrum!
+        carro2.acelerar(); // Saída: O Ferrari está acelerando: Vrum vrum!
+    }
+}
+</pre>
+                </div>
+
+                <h3>Pontos Chave</h3>
+                <ul>
+                    <li><strong>Classe:</strong> Definição abstrata (molde).</li>
+                    <li><strong>Objeto:</strong> Instância concreta da classe.</li>
+                    <li><strong>Atributos:</strong> Variáveis que guardam o estado do objeto.</li>
+                    <li><strong>Métodos:</strong> Funções que definem o comportamento do objeto.</li>
+                    <li><strong>new:</strong> Palavra-chave usada para criar um novo objeto.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

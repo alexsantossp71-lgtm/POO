@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes - POO Java</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .code-block {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #e2e8f0;
+            margin: 20px 0;
+            border: 1px solid #334155;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .concept-card {
+            max-width: 100%;
+            cursor: default;
+            transform: none;
+        }
+
+        .concept-card:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--border-color);
+        }
+
+        ul {
+            margin-left: 20px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero" style="min-height: 40vh;">
+        <div class="hero-background"></div>
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Voltar para Home
+            </a>
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 10px;">Redes</h1>
+            <p class="hero-subtitle">Conectando aplicações distribuídas.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="concept-card">
+                <h2>O que é?</h2>
+                <p>A programação de redes em Java permite criar aplicações que se comunicam através de uma rede (como a
+                    Internet ou uma rede local). O pacote <code>java.net</code> fornece classes poderosas para trabalhar
+                    com protocolos de baixo nível (TCP, UDP) e alto nível (HTTP).</p>
+
+                <h3>Exemplo: Cliente-Servidor Simples (TCP)</h3>
+                <div class="code-block">
+                    <pre>
+// --- SERVIDOR ---
+import java.net.*;
+import java.io.*;
+
+public class Servidor {
+    public static void main(String[] args) throws IOException {
+        ServerSocket server = new ServerSocket(12345);
+        System.out.println("Servidor ouvindo na porta 12345...");
+        
+        // Bloqueia até um cliente conectar
+        Socket cliente = server.accept();
+        System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
+        
+        server.close();
+    }
+}
+
+// --- CLIENTE ---
+import java.net.*;
+import java.io.*;
+
+public class Cliente {
+    public static void main(String[] args) throws IOException {
+        // Tenta conectar ao servidor no localhost
+        Socket socket = new Socket("127.0.0.1", 12345);
+        System.out.println("Conectado ao servidor!");
+        
+        socket.close();
+    }
+}
+</pre>
+                </div>
+
+                <h3>Conceitos Chave</h3>
+                <ul>
+                    <li><strong>IP:</strong> Endereço que identifica um computador na rede.</li>
+                    <li><strong>Porta:</strong> Identifica um processo/aplicação específica no computador.</li>
+                    <li><strong>Socket:</strong> Ponto final de uma conexão de comunicação bidirecional.</li>
+                    <li><strong>TCP:</strong> Protocolo confiável (garante entrega e ordem).</li>
+                    <li><strong>UDP:</strong> Protocolo rápido, mas não confiável (streaming, jogos).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threads - POO Java</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .code-block {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #e2e8f0;
+            margin: 20px 0;
+            border: 1px solid #334155;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .concept-card {
+            max-width: 100%;
+            cursor: default;
+            transform: none;
+        }
+
+        .concept-card:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--border-color);
+        }
+
+        ul {
+            margin-left: 20px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero" style="min-height: 40vh;">
+        <div class="hero-background"></div>
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Voltar para Home
+            </a>
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 10px;">Threads</h1>
+            <p class="hero-subtitle">Programação Concorrente e Paralela.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="concept-card">
+                <h2>O que são?</h2>
+                <p>Uma <strong>Thread</strong> é a menor unidade de processamento que pode ser agendada por um sistema
+                    operacional. Em Java, o uso de Threads permite que seu programa execute múltiplas tarefas "ao mesmo
+                    tempo" (concorrência), aproveitando melhor os processadores modernos com múltiplos núcleos.</p>
+
+                <h3>Exemplo em Java</h3>
+                <div class="code-block">
+                    <pre>
+// Opção 1: Estender a classe Thread
+class MinhaThread extends Thread {
+    public void run() {
+        System.out.println("Thread rodando em paralelo!");
+    }
+}
+
+// Opção 2: Implementar Runnable (Melhor prática)
+class MinhaTarefa implements Runnable {
+    public void run() {
+        for(int i=0; i<5; i++) {
+            System.out.println("Tarefa executando: " + i);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MinhaThread t1 = new MinhaThread();
+        t1.start(); // Inicia a thread
+
+        Thread t2 = new Thread(new MinhaTarefa());
+        t2.start(); // Inicia a segunda thread
+        
+        System.out.println("Método main continua executando...");
+    }
+}
+</pre>
+                </div>
+
+                <h3>Conceitos Chave</h3>
+                <ul>
+                    <li><strong>start():</strong> Método que inicia a execução da thread (chama o run).</li>
+                    <li><strong>run():</strong> Onde fica o código que a thread vai executar.</li>
+                    <li><strong>sleep():</strong> Pausa a thread por um tempo determinado.</li>
+                    <li><strong>synchronized:</strong> Evita que duas threads acessem o mesmo recurso ao mesmo tempo,
+                        prevenindo inconsistências.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

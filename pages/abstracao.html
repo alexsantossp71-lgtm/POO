@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstração - POO Java</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .code-block {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #e2e8f0;
+            margin: 20px 0;
+            border: 1px solid #334155;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .concept-card {
+            max-width: 100%;
+            cursor: default;
+            transform: none;
+        }
+
+        .concept-card:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--border-color);
+        }
+
+        ul {
+            margin-left: 20px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero" style="min-height: 40vh;">
+        <div class="hero-background"></div>
+        <div class="container">
+            <a href="../index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Voltar para Home
+            </a>
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 10px;">Abstração</h1>
+            <p class="hero-subtitle">Simplificando a complexidade.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="concept-card">
+                <h2>O que é?</h2>
+                <p><strong>Abstração</strong> é o processo de focar apenas nas características essenciais de um objeto,
+                    ignorando detalhes de implementação menos importantes para o contexto atual. Em Java, a abstração é
+                    alcançada principalmente através de <strong>Classes Abstratas</strong> e
+                    <strong>Interfaces</strong>.</p>
+                <p>Uma classe abstrata não pode ser instanciada diretamente; ela serve como um modelo base para outras
+                    classes.</p>
+
+                <h3>Exemplo em Java</h3>
+                <div class="code-block">
+                    <pre>
+// Classe Abstrata: Define um conceito genérico
+abstract class FormaGeometrica {
+    String cor;
+    
+    // Método abstrato: As subclasses SÃO OBRIGADAS a implementar
+    abstract double calcularArea();
+    
+    // Método concreto: Já tem implementação e pode ser herdado
+    void exibirCor() {
+        System.out.println("Cor: " + cor);
+    }
+}
+
+// Classe Concreta
+class Circulo extends FormaGeometrica {
+    double raio;
+    
+    Circulo(double raio, String cor) {
+        this.raio = raio;
+        this.cor = cor;
+    }
+    
+    @Override
+    double calcularArea() {
+        return Math.PI * raio * raio;
+    }
+}
+
+// Classe Concreta
+class Retangulo extends FormaGeometrica {
+    double largura, altura;
+    
+    Retangulo(double l, double a, String cor) {
+        this.largura = l;
+        this.altura = a;
+        this.cor = cor;
+    }
+    
+    @Override
+    double calcularArea() {
+        return largura * altura;
+    }
+}
+</pre>
+                </div>
+
+                <h3>Pontos Chave</h3>
+                <ul>
+                    <li><strong>abstract:</strong> Palavra-chave para definir classes e métodos abstratos.</li>
+                    <li><strong>Interface:</strong> Um contrato que define um conjunto de métodos que uma classe deve
+                        implementar. É um nível mais alto de abstração (100% abstrata até o Java 7).</li>
+                    <li><strong>Foco no "O Que":</strong> A abstração define O QUE um objeto faz, não COMO ele faz.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
