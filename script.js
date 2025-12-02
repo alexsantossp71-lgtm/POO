@@ -35,6 +35,14 @@ document.querySelectorAll('.concept-card').forEach((card, index) => {
     observer.observe(card);
 });
 
+// Observe video cards
+document.querySelectorAll('.video-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `all 0.6s ease ${index * 0.05}s`;
+    observer.observe(card);
+});
+
 // Observe timeline items
 document.querySelectorAll('.timeline-item').forEach((item, index) => {
     item.style.opacity = '0';
