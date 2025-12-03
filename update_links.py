@@ -1,7 +1,7 @@
 
 import os
 
-file_path = r'c:\antigravity\POO\index.html'
+file_path = 'index.html'
 
 with open(file_path, 'r', encoding='utf-8') as f:
     content = f.read()

@@ -4,575 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Aprenda Programação Orientada a Objetos (POO) com Java - Curso completo da Univesp">
-    <title>POO - Programação Orientada a Objetos | Univesp</title>
+    <meta name="description" content="Curso Completo de Programação Orientada a Objetos com Java">
+    <title>POO Masterclass | Univesp</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background"></div>
+        <img src="images/hero-bg.png" alt="Abstract Tech Background" class="hero-bg-img">
         <div class="container">
             <div class="hero-content">
+                <div class="section-tag">Curso Completo</div>
                 <h1 class="hero-title">
-                    <span class="gradient-text">Programação</span><br>
-                    <span class="gradient-text">Orientada a Objetos</span>
+                    Domine a <br>
+                    <span class="gradient-text">Programação Orientada a Objetos</span>
                 </h1>
-                <p class="hero-subtitle">Domine os conceitos fundamentais da POO com Java</p>
-                <p class="hero-description">Curso completo da <strong>Univesp</strong> ministrado pelo Prof. Júlio Cezar
-                    Estrella</p>
+                <p class="hero-subtitle">Com Java e Design Patterns</p>
+                <p class="hero-description">
+                    Uma jornada completa pelos fundamentos e técnicas avançadas da POO. 
+                    Aprenda a construir software robusto, escalável e moderno com o curso oficial da Univesp.
+                </p>
                 <div class="hero-cta">
-                    <a href="https://www.youtube.com/watch?v=IldU6EJ-CVk&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj"
-                        target="_blank" class="btn btn-primary">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
+                    <a href="#conceitos" class="btn btn-primary">
+                        Começar Agora
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=IldU6EJ-CVk&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj" target="_blank" class="btn btn-secondary">
+                        <i data-lucide="youtube"></i>
                         Assistir Playlist
                     </a>
-                    <a href="#conceitos" class="btn btn-secondary">Explorar Conceitos</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Intro Section -->
-    <section class="intro">
+    <!-- Concepts Grid -->
+    <section id="conceitos" class="grid-section">
         <div class="container">
-            <h2 class="section-title">O que é POO?</h2>
-            <p class="intro-text">
-                A <strong>Programação Orientada a Objetos</strong> é um paradigma de programação que organiza o código
-                em
-                <strong>objetos</strong> que representam entidades do mundo real. Cada objeto possui
-                <strong>características
-                    (atributos)</strong> e <strong>comportamentos (métodos)</strong>, permitindo criar sistemas mais
-                modulares,
-                reutilizáveis e fáceis de manter.
-            </p>
-        </div>
-    </section>
-
-    <!-- Main Concepts -->
-    <section id="conceitos" class="concepts">
-        <div class="container">
-            <h2 class="section-title">Conceitos Principais</h2>
-            <div class="concepts-grid">
+            <div class="section-header">
+                <span class="section-tag">Fundamentos</span>
+                <h2>Conceitos Essenciais</h2>
+                <p>A base sólida que todo desenvolvedor precisa.</p>
+            </div>
+            
+            <div class="cards-grid">
                 <!-- Classes e Objetos -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="9" y1="9" x2="15" y2="9"></line>
-                            <line x1="9" y1="15" x2="15" y2="15"></line>
-                        </svg>
+                <a href="pages/classes-objetos.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="box"></i>
                     </div>
                     <h3>Classes e Objetos</h3>
-                    <p>Classes são moldes que definem a estrutura e comportamento dos objetos. Objetos são instâncias de
-                        classes com características únicas.</p>
-                    <div class="concept-tag">Fundamento</div>
-                </div>
+                    <p>Entenda a diferença entre o molde e a instância. O ponto de partida de tudo.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Básico</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
+                    </div>
+                </a>
 
                 <!-- Encapsulamento -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="5" y="11" width="14" height="10" rx="2" ry="2"></rect>
-                            <path d="M12 11V7a4 4 0 0 1 8 0v4"></path>
-                        </svg>
+                <a href="pages/encapsulamento.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="shield"></i>
                     </div>
                     <h3>Encapsulamento</h3>
-                    <p>Oculta os detalhes internos de implementação, expondo apenas interfaces necessárias através de
-                        modificadores de acesso (private, protected, public).</p>
-                    <div class="concept-tag">Proteção</div>
-                </div>
+                    <p>Proteja seus dados e exponha apenas o necessário com modificadores de acesso.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Segurança</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
+                    </div>
+                </a>
 
                 <!-- Abstração -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
+                <a href="pages/abstracao.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="layers"></i>
                     </div>
                     <h3>Abstração</h3>
-                    <p>Simplifica a complexidade ao representar apenas os aspectos essenciais, ignorando detalhes
-                        irrelevantes para o contexto.</p>
-                    <div class="concept-tag">Simplicidade</div>
-                </div>
-
-                <!-- Tratamento de Exceções -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                        </svg>
+                    <p>Simplifique a complexidade focando apenas no que realmente importa para o sistema.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Design</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
                     </div>
-                    <h3>Exceções</h3>
-                    <p>Gerenciamento robusto de erros em tempo de execução, permitindo que programas lidem graciosamente
-                        com situações inesperadas.</p>
-                    <div class="concept-tag">Confiabilidade</div>
-                </div>
+                </a>
+
+                <!-- Exceções -->
+                <a href="pages/excecoes.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <h3>Tratamento de Exceções</h3>
+                    <p>Crie aplicações resilientes que sabem lidar com erros de forma elegante.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Robustez</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
+                    </div>
+                </a>
 
                 <!-- Coleções -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="8" y1="6" x2="21" y2="6"></line>
-                            <line x1="8" y1="12" x2="21" y2="12"></line>
-                            <line x1="8" y1="18" x2="21" y2="18"></line>
-                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                        </svg>
+                <a href="pages/colecoes.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="list"></i>
                     </div>
                     <h3>Coleções</h3>
-                    <p>Estruturas de dados como listas, filas, pilhas e árvores para organizar e manipular grupos de
-                        objetos de forma eficiente.</p>
-                    <div class="concept-tag">Estruturas</div>
-                </div>
+                    <p>Listas, Sets e Maps. Aprenda a manipular grupos de dados eficientemente.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Estruturas</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
+                    </div>
+                </a>
 
                 <!-- Streams -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                        </svg>
+                <a href="pages/streams-serializacao.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="repeat"></i>
                     </div>
-                    <h3>Streams & Serialização</h3>
-                    <p>Comunicação e persistência de dados através de streams, incluindo serialização e desserialização
-                        de objetos.</p>
-                    <div class="concept-tag">I/O</div>
-                </div>
+                    <h3>Streams & I/O</h3>
+                    <p>Manipulação funcional de dados e persistência de objetos.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Avançado</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
+                    </div>
+                </a>
 
                 <!-- Threads -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="13 17 18 12 13 7"></polyline>
-                            <polyline points="6 17 11 12 6 7"></polyline>
-                        </svg>
+                <a href="pages/threads.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="cpu"></i>
                     </div>
-                    <h3>Threads</h3>
-                    <p>Programação concorrente permitindo que múltiplas tarefas sejam executadas simultaneamente para
-                        melhor performance.</p>
-                    <div class="concept-tag">Concorrência</div>
-                </div>
+                    <h3>Threads & Concorrência</h3>
+                    <p>Execute múltiplas tarefas simultaneamente e otimize a performance.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Performance</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
+                    </div>
+                </a>
 
-                <!-- Programação em Rede -->
-                <div class="concept-card">
-                    <div class="concept-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="2"></circle>
-                            <path
-                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83">
-                            </path>
-                        </svg>
+                <!-- Redes -->
+                <a href="pages/redes.html" class="card">
+                    <div class="card-icon">
+                        <i data-lucide="globe"></i>
                     </div>
-                    <h3>Redes</h3>
-                    <p>Desenvolvimento de aplicações distribuídas usando sockets, protocolos TCP/UDP e arquitetura
-                        cliente-servidor.</p>
-                    <div class="concept-tag">Distribuído</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Course Structure -->
-    <section class="structure">
-        <div class="container">
-            <h2 class="section-title">Estrutura do Curso</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <h3>Fundamentos</h3>
-                        <p>Paradigmas de programação, conceitos de POO, abstração e interfaces</p>
+                    <h3>Programação em Rede</h3>
+                    <p>Conecte suas aplicações ao mundo com Sockets e protocolos.</p>
+                    <div class="card-footer">
+                        <span class="card-tag">Distribuído</span>
+                        <i data-lucide="arrow-right" class="card-arrow"></i>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <h3>Classes e Objetos</h3>
-                        <p>Criação de classes, instanciação de objetos e modificadores de acesso</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <h3>Encapsulamento</h3>
-                        <p>Getters, setters e ocultação de informação</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <h3>Exceções</h3>
-                        <p>Tratamento de erros em tempo de compilação e execução</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">5</div>
-                    <div class="timeline-content">
-                        <h3>Estruturas de Dados</h3>
-                        <p>Coleções: listas, filas, pilhas, árvores e tabelas</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">6</div>
-                    <div class="timeline-content">
-                        <h3>Tópicos Avançados</h3>
-                        <p>Streams, serialização, threads e programação de redes</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Course Videos -->
-    <section id="aulas" class="classes">
-        <div class="container">
-            <h2 class="section-title">Vídeos do Curso</h2>
-            <div class="video-grid">
-                <!-- Video 1 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Apresentação</h3>
-                    <a href="https://www.youtube.com/watch?v=IldU6EJ-CVk&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=1"
-                        target="_blank" class="btn-video">Assistir Aula 01</a>
-                </div>
-
-                <!-- Video 2 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Paradigmas de Programação</h3>
-                    <a href="https://www.youtube.com/watch?v=9czhqT7OyUs&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=2"
-                        target="_blank" class="btn-video">Assistir Aula 02</a>
-                </div>
-
-                <!-- Video 3 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Java e Frameworks</h3>
-                    <a href="https://www.youtube.com/watch?v=Cd7yxV_wqHs&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=3"
-                        target="_blank" class="btn-video">Assistir Aula 03</a>
-                </div>
-
-                <!-- Video 4 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Classes e Objetos</h3>
-                    <a href="https://www.youtube.com/watch?v=GHLFEhdk7Ys&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=4"
-                        target="_blank" class="btn-video">Assistir Aula 04</a>
-                </div>
-
-                <!-- Video 5 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Encapsulamento</h3>
-                    <a href="https://www.youtube.com/watch?v=fzdLzuD7RAg&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=5"
-                        target="_blank" class="btn-video">Assistir Aula 05</a>
-                </div>
-
-                <!-- Video 6 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Herança e Polimorfismo I</h3>
-                    <a href="https://www.youtube.com/watch?v=cmxIBX44Uws&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=6"
-                        target="_blank" class="btn-video">Assistir Aula 06</a>
-                </div>
-
-                <!-- Video 7 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Herança e Polimorfismo II</h3>
-                    <a href="https://www.youtube.com/watch?v=07SgD8JMHnY&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=7"
-                        target="_blank" class="btn-video">Assistir Aula 07</a>
-                </div>
-
-                <!-- Video 8 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Interfaces e Abstratas</h3>
-                    <a href="https://www.youtube.com/watch?v=bOZQ9q7WhaY&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=8"
-                        target="_blank" class="btn-video">Assistir Aula 08</a>
-                </div>
-
-                <!-- Video 9 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Classes Genéricas</h3>
-                    <a href="https://www.youtube.com/watch?v=ufJkkwdw1C4&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=9"
-                        target="_blank" class="btn-video">Assistir Aula 09</a>
-                </div>
-
-                <!-- Video 10 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Coleções I</h3>
-                    <a href="https://www.youtube.com/watch?v=vr581qxQ4SE&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=10"
-                        target="_blank" class="btn-video">Assistir Aula 10</a>
-                </div>
-
-                <!-- Video 11 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Coleções II</h3>
-                    <a href="https://www.youtube.com/watch?v=WIUq0-JRM8A&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=11"
-                        target="_blank" class="btn-video">Assistir Aula 11</a>
-                </div>
-
-                <!-- Video 12 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Conjuntos</h3>
-                    <a href="https://www.youtube.com/watch?v=TZm-hxppNhM&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=12"
-                        target="_blank" class="btn-video">Assistir Aula 12</a>
-                </div>
-
-                <!-- Video 13 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Mapas (Maps)</h3>
-                    <a href="https://www.youtube.com/watch?v=m-Vfco5-MXc&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=13"
-                        target="_blank" class="btn-video">Assistir Aula 13</a>
-                </div>
-
-                <!-- Video 14 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Exceções I</h3>
-                    <a href="https://www.youtube.com/watch?v=dicmUJ5A6NY&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=14"
-                        target="_blank" class="btn-video">Assistir Aula 14</a>
-                </div>
-
-                <!-- Video 15 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Exceções II</h3>
-                    <a href="https://www.youtube.com/watch?v=M4l_6bV_Wgw&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=15"
-                        target="_blank" class="btn-video">Assistir Aula 15</a>
-                </div>
-
-                <!-- Video 16 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Streams e Serialização I</h3>
-                    <a href="https://www.youtube.com/watch?v=vtL2r-WrPd8&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=16"
-                        target="_blank" class="btn-video">Assistir Aula 16</a>
-                </div>
-
-                <!-- Video 17 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Streams e Serialização II</h3>
-                    <a href="https://www.youtube.com/watch?v=1L8pBIFlxYs&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=17"
-                        target="_blank" class="btn-video">Assistir Aula 17</a>
-                </div>
-
-                <!-- Video 18 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Threads</h3>
-                    <a href="https://www.youtube.com/watch?v=EEkwS9NB8UE&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=18"
-                        target="_blank" class="btn-video">Assistir Aula 18</a>
-                </div>
-
-                <!-- Video 19 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Redes I</h3>
-                    <a href="https://www.youtube.com/watch?v=56GZv0RA5hI&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=19"
-                        target="_blank" class="btn-video">Assistir Aula 19</a>
-                </div>
-
-                <!-- Video 20 -->
-                <div class="video-card">
-                    <div class="video-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>Redes II</h3>
-                    <a href="https://www.youtube.com/watch?v=GTrpqriUxQI&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj&index=20"
-                        target="_blank" class="btn-video">Assistir Aula 20</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">Por que aprender POO?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-number">01</div>
-                    <h3>Código Reutilizável</h3>
-                    <p>Crie componentes que podem ser usados em diferentes projetos</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-number">02</div>
-                    <h3>Manutenção Simples</h3>
-                    <p>Alterações localizadas facilitam correções e melhorias</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-number">03</div>
-                    <h3>Modelagem Real</h3>
-                    <p>Represente entidades do mundo real de forma intuitiva</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-number">04</div>
-                    <h3>Escalabilidade</h3>
-                    <p>Desenvolva sistemas que crescem sem perder organização</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronto para começar?</h2>
-                <p>Acesse a playlist completa e inicie sua jornada na Programação Orientada a Objetos</p>
-                <a href="https://www.youtube.com/watch?v=IldU6EJ-CVk&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj"
-                    target="_blank" class="btn btn-primary btn-large">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                    Acessar Curso Completo
                 </a>
             </div>
         </div>
@@ -581,29 +169,39 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Sobre</h3>
-                    <p><strong>Disciplina:</strong> COM230 - Programação Orientada a Objetos</p>
-                    <p><strong>Instituição:</strong> Univesp - Universidade Virtual do Estado de São Paulo</p>
-                    <p><strong>Professor:</strong> Júlio Cezar Estrella</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Sobre o Curso</h4>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">
+                        Material didático complementar para a disciplina de Programação Orientada a Objetos da Univesp.
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <h3>Links</h3>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
                     <ul>
-                        <li><a href="https://univesp.br" target="_blank">Univesp</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=IldU6EJ-CVk&list=PLxI8Can9yAHcC0iaIe4ijXkh_iC3hracj"
-                                target="_blank">Playlist YouTube</a></li>
+                        <li><a href="https://univesp.br" target="_blank">Portal Univesp</a></li>
+                        <li><a href="https://github.com/alexsantossp71-lgtm/POO" target="_blank">Repositório GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tecnologias</h4>
+                    <ul>
+                        <li>Java JDK 17+</li>
+                        <li>IntelliJ IDEA / Eclipse</li>
+                        <li>Git & GitHub</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Univesp. Material educacional de acesso público.</p>
+            <div class="copyright">
+                <p>&copy; 2025 Univesp. Desenvolvido com ❤️ para estudantes.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+    </script>
     <script src="script.js"></script>
 </body>
-
 </html>

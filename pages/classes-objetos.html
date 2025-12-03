@@ -1,96 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classes e Objetos - POO Java</title>
+    <title>Classes e Objetos | POO Masterclass</title>
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .content-section { padding: 60px 0; }
-        .code-block { background: #1e293b; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: monospace; color: #e2e8f0; margin: 20px 0; border: 1px solid #334155; }
-        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; margin-bottom: 40px; font-weight: 600; }
-        .back-link:hover { text-decoration: underline; }
-        .concept-card { max-width: 100%; cursor: default; transform: none; }
-        .concept-card:hover { transform: none; box-shadow: none; border-color: var(--border-color); }
-        ul { margin-left: 20px; color: var(--text-gray); margin-bottom: 20px; }
-        li { margin-bottom: 10px; }
+        .page-header {
+            padding: 120px 0 60px;
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%);
+        }
+
+        .concept-image {
+            width: 100%;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .key-point {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .key-point i {
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
     </style>
 </head>
+
 <body>
-    <section class="hero" style="min-height: 40vh;">
-        <div class="hero-background"></div>
+    <!-- Navigation -->
+    <nav style="position: absolute; top: 40px; left: 0; right: 0; z-index: 100;">
         <div class="container">
-            <a href="../index.html" class="back-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <a href="../index.html" class="btn btn-secondary" style="padding: 10px 20px;">
+                <i data-lucide="arrow-left"></i>
                 Voltar para Home
             </a>
-            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 10px;">Classes e Objetos</h1>
-            <p class="hero-subtitle">A base da Programação Orientada a Objetos.</p>
         </div>
-    </section>
+    </nav>
 
-    <section class="content-section">
+    <!-- Header -->
+    <header class="page-header">
         <div class="container">
-            <div class="concept-card">
-                <h2>O que são?</h2>
-                <p><strong>Classes</strong> são como "moldes" ou "plantas" que definem a estrutura e o comportamento de objetos. Elas especificam quais atributos (dados) e métodos (ações) os objetos criados a partir dela terão.</p>
-                <p><strong>Objetos</strong> são instâncias dessas classes. Se a classe é a planta de uma casa, o objeto é a casa construída em si. Você pode criar múltiplos objetos a partir de uma única classe, cada um com seus próprios valores para os atributos.</p>
-                
-                <h3>Exemplo em Java</h3>
-                <div class="code-block">
-<pre>
-// Definição da Classe
-public class Carro {
-    // Atributos (Características)
-    String modelo;
-    String cor;
-    int ano;
+            <div class="section-tag">Fundamentos</div>
+            <h1 class="hero-title">Classes e Objetos</h1>
+            <p class="hero-subtitle">A anatomia da Programação Orientada a Objetos</p>
+        </div>
+    </header>
 
-    // Métodos (Comportamentos)
-    void acelerar() {
-        System.out.println("O " + modelo + " está acelerando: Vrum vrum!");
+    <!-- Main Content -->
+    <section class="page-content" style="padding-bottom: 100px;">
+        <div class="container">
+            <img src="../images/class-object.png" alt="Class vs Object Visualization" class="concept-image">
+
+            <div class="content-grid">
+                <div class="main-text">
+                    <h2>O Conceito Fundamental</h2>
+                    <p>
+                        Imagine que você é um arquiteto. Antes de construir uma casa, você precisa desenhar a planta.
+                        A planta define onde ficam as paredes, as janelas, qual a altura do teto, etc. Mas a planta
+                        <strong>não é a casa</strong>.
+                        Você não pode morar na planta.
+                    </p>
+                    <p>
+                        Na POO, a <strong>Classe</strong> é a planta (o molde). O <strong>Objeto</strong> é a casa
+                        construída (a instância concreta).
+                        Com uma única planta (Classe), você pode construir infinitas casas (Objetos), cada uma podendo
+                        ter cores diferentes,
+                        mas todas seguindo a mesma estrutura definida.
+                    </p>
+
+                    <h3 style="margin-top: 40px;">Estrutura de uma Classe</h3>
+                    <p>Uma classe em Java é composta essencialmente por dois elementos:</p>
+                    <ul>
+                        <li><strong>Atributos (Estado):</strong> Variáveis que armazenam dados (ex: cor, velocidade,
+                            nome).</li>
+                        <li><strong>Métodos (Comportamento):</strong> Funções que definem o que o objeto pode fazer (ex:
+                            acelerar, frear, falar).</li>
+                    </ul>
+
+                    <h3 style="margin-top: 40px;">Exemplo Prático: Personagem de Jogo</h3>
+                    <p>Vamos modelar um personagem de RPG simples.</p>
+
+                    <pre><code class="language-java">
+// A Classe (O Molde)
+public class Heroi {
+    // Atributos (Características)
+    String nome;
+    String classe; // Guerreiro, Mago, etc.
+    int nivel;
+    double vida;
+
+    // Construtor (Como criar o herói)
+    public Heroi(String nome, String classe) {
+        this.nome = nome;
+        this.classe = classe;
+        this.nivel = 1;
+        this.vida = 100.0;
     }
-    
-    void frear() {
-        System.out.println("O " + modelo + " parou.");
+
+    // Métodos (Ações)
+    public void atacar() {
+        System.out.println(nome + " atacou com sua arma!");
+    }
+
+    public void subirNivel() {
+        nivel++;
+        vida += 20;
+        System.out.println(nome + " subiu para o nível " + nivel + "!");
     }
 }
+                    </code></pre>
 
-// Classe Principal para testar
+                    <h3 style="margin-top: 40px;">Criando e Usando Objetos</h3>
+                    <p>Agora que temos o molde, vamos criar os heróis na memória do computador usando a palavra-chave
+                        <code>new</code>.</p>
+
+                    <pre><code class="language-java">
 public class Main {
     public static void main(String[] args) {
-        // Instanciando objetos (Criando carros)
-        Carro carro1 = new Carro();
-        carro1.modelo = "Fusca";
-        carro1.cor = "Azul";
-        carro1.ano = 1975;
+        // Instanciando objetos (Criando heróis reais na memória)
+        Heroi heroi1 = new Heroi("Aragorn", "Guerreiro");
+        Heroi heroi2 = new Heroi("Gandalf", "Mago");
 
-        Carro carro2 = new Carro();
-        carro2.modelo = "Ferrari";
-        carro2.cor = "Vermelho";
-        carro2.ano = 2023;
+        // Cada objeto tem seu próprio estado
+        System.out.println(heroi1.nome); // Aragorn
+        System.out.println(heroi2.nome); // Gandalf
 
-        // Usando os objetos
-        carro1.acelerar(); // Saída: O Fusca está acelerando: Vrum vrum!
-        carro2.acelerar(); // Saída: O Ferrari está acelerando: Vrum vrum!
+        // Interagindo com os objetos
+        heroi1.atacar();
+        heroi2.subirNivel();
     }
 }
-</pre>
+                    </code></pre>
                 </div>
 
-                <h3>Pontos Chave</h3>
-                <ul>
-                    <li><strong>Classe:</strong> Definição abstrata (molde).</li>
-                    <li><strong>Objeto:</strong> Instância concreta da classe.</li>
-                    <li><strong>Atributos:</strong> Variáveis que guardam o estado do objeto.</li>
-                    <li><strong>Métodos:</strong> Funções que definem o comportamento do objeto.</li>
-                    <li><strong>new:</strong> Palavra-chave usada para criar um novo objeto.</li>
-                </ul>
+                <aside>
+                    <div class="sidebar-card">
+                        <h3>Resumo Rápido</h3>
+                        <div class="key-point">
+                            <i data-lucide="check-circle"></i>
+                            <div>
+                                <strong>Classe</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Definição abstrata, código estático.</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <i data-lucide="check-circle"></i>
+                            <div>
+                                <strong>Objeto</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Instância concreta, ocupa memória RAM.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <i data-lucide="check-circle"></i>
+                            <div>
+                                <strong>Instanciação</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Ato de criar um objeto usando
+                                    <code>new</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card"
+                        style="margin-top: 24px; background: rgba(99, 102, 241, 0.1); border-color: var(--primary);">
+                        <h3 style="color: var(--primary-light);">Dica Pro</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0; color: var(--text-light);">
+                            Sempre comece o nome de classes com <strong>Letra Maiúscula</strong> (PascalCase) e
+                            métodos/variáveis com <strong>letra minúscula</strong> (camelCase). Isso é uma convenção
+                            essencial em Java!
+                        </p>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Univesp. POO Masterclass.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>
