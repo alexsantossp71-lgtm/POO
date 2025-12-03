@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Conhecimentos | POO Masterclass</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .page-header {
+            padding: 80px 0 40px;
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15), transparent 50%);
+            text-align: center;
+        }
+
+        .quiz-card {
+            cursor: pointer;
+            text-align: center;
+            align-items: center;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .question-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: var(--text-light);
+        }
+
+        .options-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            color: var(--text-light);
+            text-align: left;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+        }
+
+        .option-btn.correct {
+            background: rgba(34, 197, 94, 0.2) !important;
+            border-color: #22c55e !important;
+            color: #22c55e !important;
+        }
+
+        .option-btn.wrong {
+            background: rgba(239, 68, 68, 0.2) !important;
+            border-color: #ef4444 !important;
+            color: #ef4444 !important;
+        }
+
+        .result-container {
+            text-align: center;
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .score-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 auto 30px;
+            background: rgba(99, 102, 241, 0.1);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav style="position: absolute; top: 40px; left: 0; right: 0; z-index: 100;">
+        <div class="container">
+            <a href="../index.html" class="btn btn-secondary" style="padding: 10px 20px;">
+                <i data-lucide="arrow-left"></i>
+                Voltar para Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-tag">Desafio</div>
+            <h1 class="hero-title">Quiz de Conhecimentos</h1>
+            <p class="hero-subtitle">Teste o que você aprendeu sobre Java e POO</p>
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section id="categories-section" class="grid-section" style="padding-top: 0;">
+        <div class="container">
+            <div id="categories-container" class="cards-grid">
+                <!-- Categories will be injected here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Interface -->
+    <section id="quiz-container" class="quiz-container">
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <div class="question-header">
+            <span id="category-title">Categoria</span>
+            <span>Questão <span id="current-question-num">1</span> de <span id="total-question-num">10</span></span>
+        </div>
+
+        <div id="question-text" class="question-text">
+            Carregando pergunta...
+        </div>
+
+        <div id="options-container" class="options-grid">
+            <!-- Options will be injected here -->
+        </div>
+    </section>
+
+    <!-- Result Interface -->
+    <section id="result-container" class="result-container">
+        <div class="container">
+            <div class="score-circle" id="score-text">0 / 10</div>
+            <h2 id="score-message">Mensagem de resultado</h2>
+            <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center;">
+                <button id="restart-btn" class="btn btn-primary">
+                    <i data-lucide="rotate-ccw"></i> Tentar Outro Quiz
+                </button>
+                <a href="../index.html" class="btn btn-secondary">
+                    <i data-lucide="home"></i> Voltar ao Início
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Univesp. POO Masterclass.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/quiz_data.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
