@@ -161,6 +161,35 @@ class Pix implements Pagavel {
     }
 }
                     </code></pre>
+
+                    <h3 style="margin-top: 40px;">Interface vs Classe Abstrata</h3>
+                    <p>
+                        Essa é uma pergunta clássica de entrevista!
+                    </p>
+                    <ul style="margin-bottom: 20px;">
+                        <li><strong>Herança:</strong> Uma classe pode implementar <em>várias</em> interfaces, mas só
+                            pode estender <em>uma</em> classe abstrata.</li>
+                        <li><strong>Atributos:</strong> Interfaces só podem ter constantes
+                            (<code>public static final</code>). Classes abstratas podem ter qualquer tipo de atributo.
+                        </li>
+                        <li><strong>Construtores:</strong> Interfaces não têm construtores. Classes abstratas têm.</li>
+                    </ul>
+
+                    <h4 style="color: var(--text-light); margin-top: 20px;">Novidade no Java 8: Default Methods</h4>
+                    <p>
+                        Antigamente, interfaces só podiam ter métodos abstratos. A partir do Java 8, elas podem ter
+                        métodos com corpo (implementação) usando a palavra-chave <code>default</code>.
+                    </p>
+                    <pre><code class="language-java">
+interface Veiculo {
+    void acelerar(); // Abstrato
+
+    // Método com corpo na interface!
+    default void buzinar() {
+        System.out.println("Bi bi!");
+    }
+}
+                    </code></pre>
                 </div>
 
                 <aside>

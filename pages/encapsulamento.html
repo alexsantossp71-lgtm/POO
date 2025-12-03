@@ -157,6 +157,27 @@ public class ContaBancaria {
                             </li>
                         </ul>
                     </div>
+
+                    <h3 style="margin-top: 40px;">Conceitos Avançados</h3>
+                    <p>
+                        O encapsulamento ajuda a reduzir o <strong>Acoplamento</strong> (dependência entre classes) e
+                        aumentar a
+                        <strong>Coesão</strong> (classe focada em uma única responsabilidade).
+                    </p>
+                    <p>
+                        <strong>JavaBeans:</strong> É um padrão de projeto onde a classe possui:
+                    </p>
+                    <ul style="margin-top: 10px; margin-bottom: 20px;">
+                        <li>Construtor padrão (sem argumentos).</li>
+                        <li>Atributos privados.</li>
+                        <li>Getters e Setters públicos para acesso.</li>
+                        <li>Implementa <code>Serializable</code>.</li>
+                    </ul>
+                    <p>
+                        <strong>Validação no Setter:</strong> É o local ideal para garantir que os dados estão corretos.
+                        Por exemplo, <code>setIdade(int idade)</code> pode verificar <code>if (idade > 0)</code> antes
+                        de atribuir.
+                    </p>
                 </div>
 
                 <aside>

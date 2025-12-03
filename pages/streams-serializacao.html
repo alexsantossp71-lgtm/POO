@@ -114,6 +114,29 @@ nomes.stream()
      .forEach(System.out::println);   // Executa ação
                     </code></pre>
 
+                    <h3 style="margin-top: 40px;">Conceitos Avançados de Streams</h3>
+                    <ul style="margin-bottom: 20px;">
+                        <li><strong>Predicate:</strong> Interface funcional que recebe um valor e retorna boolean. Usada
+                            no <code>filter</code>.</li>
+                        <li><strong>Collect:</strong> Operação terminal que transforma o stream de volta em uma coleção
+                            (ex: <code>.collect(Collectors.toList())</code>).</li>
+                        <li><strong>Parallel Stream:</strong> Processamento paralelo automático usando múltiplos núcleos
+                            da CPU. Basta chamar <code>.parallelStream()</code>.</li>
+                    </ul>
+
+                    <h4 style="color: var(--text-light); margin-top: 20px;">Evitando NullPointerException com Optional
+                    </h4>
+                    <p>
+                        O <code>Optional</code> é um container que pode ou não conter um valor não-nulo. Ele força você
+                        a pensar no caso "vazio".
+                    </p>
+                    <pre><code class="language-java">
+Optional<String> possivelNome = buscarNomeNoBanco();
+
+// Se existir, imprime. Se não, imprime padrão.
+System.out.println(possivelNome.orElse("Nome não encontrado"));
+                    </code></pre>
+
                     <h3 style="margin-top: 40px;">Serialização de Objetos</h3>
                     <p>
                         Serializar é transformar um objeto em memória (RAM) em uma sequência de bytes, para que ele

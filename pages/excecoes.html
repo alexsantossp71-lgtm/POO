@@ -146,6 +146,27 @@ public class LeitorArquivo {
                             </li>
                         </ul>
                     </div>
+
+                    <h3 style="margin-top: 40px;">Hierarquia e Palavras-Chave</h3>
+                    <p>
+                        Tudo herda de <code>Throwable</code>.
+                    </p>
+                    <ul style="margin-bottom: 20px;">
+                        <li><strong>Error:</strong> Problemas graves da JVM (ex: OutOfMemoryError). Não devemos tentar
+                            tratar.</li>
+                        <li><strong>Exception:</strong> Problemas que podem ser tratados pela aplicação.</li>
+                    </ul>
+
+                    <h4 style="color: var(--text-light); margin-top: 20px;">Throw vs Throws</h4>
+                    <p>
+                        <strong>throw:</strong> É um comando (verbo). Usado para lançar uma exceção agora. <br>
+                        <code>throw new IllegalArgumentException("Idade inválida");</code>
+                    </p>
+                    <p>
+                        <strong>throws:</strong> É um aviso (declaração). Usado na assinatura do método para avisar que
+                        ele <em>pode</em> lançar um erro. <br>
+                        <code>public void lerArquivo() throws IOException { ... }</code>
+                    </p>
                 </div>
 
                 <aside>

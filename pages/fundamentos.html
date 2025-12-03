@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos da Linguagem | POO Masterclass</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .page-header {
+            padding: 120px 0 60px;
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 40%);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .key-point {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .key-point i {
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav style="position: absolute; top: 40px; left: 0; right: 0; z-index: 100;">
+        <div class="container">
+            <a href="../index.html" class="btn btn-secondary" style="padding: 10px 20px;">
+                <i data-lucide="arrow-left"></i>
+                Voltar para Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="section-tag"
+                style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                Introdução</div>
+            <h1 class="hero-title">Fundamentos de Java</h1>
+            <p class="hero-subtitle">A base tecnológica por trás da linguagem</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="page-content" style="padding-bottom: 100px;">
+        <div class="container">
+
+            <div class="content-grid">
+                <div class="main-text">
+                    <h2>O Que é Java?</h2>
+                    <p>
+                        Java é uma linguagem de programação <strong>Orientada a Objetos</strong>, fortemente tipada e
+                        híbrida (compilada e interpretada).
+                        Seu lema é <em>"Write Once, Run Anywhere"</em> (WORA), ou seja, escreva uma vez, rode em
+                        qualquer lugar.
+                    </p>
+
+                    <h3 style="margin-top: 40px;">Como Funciona?</h3>
+                    <p>
+                        Diferente de C++ que compila para código de máquina nativo, o compilador Java
+                        (<code>javac</code>) transforma seu código fonte (<code>.java</code>)
+                        em um código intermediário chamado <strong>Bytecode</strong> (<code>.class</code>).
+                    </p>
+                    <p>
+                        Quem executa esse Bytecode é a <strong>JVM (Java Virtual Machine)</strong>. É ela que garante
+                        que o programa rode igual no Windows, Linux ou Mac.
+                    </p>
+
+                    <h3 style="margin-top: 40px;">Estrutura Básica</h3>
+                    <p>
+                        Todo programa Java começa pelo método <code>main</code>. Em Java, <strong>tudo</strong> deve
+                        estar dentro de uma classe.
+                        Todas as classes herdam implicitamente da classe <code>Object</code>.
+                    </p>
+
+                    <pre><code class="language-java">
+// Nome do arquivo deve ser OlaMundo.java
+public class OlaMundo {
+    // Ponto de entrada da aplicação
+    public static void main(String[] args) {
+        System.out.println("Olá, Java!");
+    }
+}
+                    </code></pre>
+
+                    <h3 style="margin-top: 40px;">Os 4 Pilares da POO</h3>
+                    <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <li style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+                            <strong style="color: var(--primary);">1. Encapsulamento</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Proteger dados internos.</p>
+                        </li>
+                        <li style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+                            <strong style="color: var(--primary);">2. Herança</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Reutilizar código.</p>
+                        </li>
+                        <li style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+                            <strong style="color: var(--primary);">3. Polimorfismo</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Múltiplas formas.</p>
+                        </li>
+                        <li style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+                            <strong style="color: var(--primary);">4. Abstração</strong>
+                            <p style="font-size: 0.9rem; margin-top: 5px;">Simplificar complexidade.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <aside>
+                    <div class="sidebar-card">
+                        <h3>Conceitos Chave</h3>
+                        <div class="key-point">
+                            <i data-lucide="terminal"></i>
+                            <div>
+                                <strong>javac</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">O compilador que gera o Bytecode.</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <i data-lucide="cpu"></i>
+                            <div>
+                                <strong>JVM</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">A máquina virtual que executa o
+                                    Bytecode.</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <i data-lucide="code"></i>
+                            <div>
+                                <strong>IDE</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Ferramentas como IntelliJ e Eclipse
+                                    ajudam no desenvolvimento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Univesp. POO Masterclass.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

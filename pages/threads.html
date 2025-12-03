@@ -144,6 +144,28 @@ class Conta {
     }
 }
                     </code></pre>
+
+                    <h3 style="margin-top: 40px;">Problemas Comuns</h3>
+                    <p>
+                        <strong>Deadlock:</strong> Acontece quando duas threads ficam esperando uma pela outra
+                        eternamente. Ninguém avança.
+                    </p>
+                    <p>
+                        <strong>Race Condition:</strong> Quando o resultado depende da sorte (quem chega primeiro). O
+                        <code>synchronized</code> resolve isso.
+                    </p>
+
+                    <h3 style="margin-top: 40px;">ExecutorService (Pool de Threads)</h3>
+                    <p>
+                        Criar threads é custoso para o sistema. Em vez de criar uma thread para cada tarefa
+                        (<code>new Thread()</code>),
+                        usamos um <strong>Pool de Threads</strong> que reaproveita threads existentes.
+                    </p>
+                    <pre><code class="language-java">
+ExecutorService executor = Executors.newFixedThreadPool(10); // 10 threads fixas
+executor.submit(new MinhaTarefa()); // Envia tarefa para a fila
+executor.shutdown(); // Encerra quando acabar
+                    </code></pre>
                 </div>
 
                 <aside>

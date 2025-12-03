@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programação em Rede | POO Masterclass</title>
+    <title>Herança e Polimorfismo | POO Masterclass</title>
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
     <style>
         .page-header {
             padding: 120px 0 60px;
-            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 40%);
+            background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.15), transparent 40%);
         }
 
         .content-grid {
@@ -54,7 +54,7 @@
         }
 
         .key-point i {
-            color: #3b82f6;
+            color: #ec4899;
             flex-shrink: 0;
             margin-top: 4px;
         }
@@ -76,10 +76,10 @@
     <header class="page-header">
         <div class="container">
             <div class="section-tag"
-                style="color: #3b82f6; border-color: rgba(59, 130, 246, 0.2); background: rgba(59, 130, 246, 0.1);">
-                Conectividade</div>
-            <h1 class="hero-title">Programação em Rede</h1>
-            <p class="hero-subtitle">Sistemas Distribuídos com Sockets</p>
+                style="color: #ec4899; border-color: rgba(236, 72, 153, 0.2); background: rgba(236, 72, 153, 0.1);">
+                Reutilização</div>
+            <h1 class="hero-title">Herança e Polimorfismo</h1>
+            <p class="hero-subtitle">Estendendo comportamentos e flexibilizando o código</p>
         </div>
     </header>
 
@@ -89,78 +89,85 @@
 
             <div class="content-grid">
                 <div class="main-text">
-                    <h2>O Mundo Conectado</h2>
+                    <h2>Herança (Inheritance)</h2>
                     <p>
-                        Aplicações modernas raramente funcionam isoladas. Elas precisam conversar com bancos de dados,
-                        APIs externas ou outros clientes.
-                        O Java fornece o pacote <code>java.net</code> para facilitar essa comunicação via protocolo
-                        TCP/IP.
+                        Herança permite que uma classe (Subclasse) herde atributos e métodos de outra classe
+                        (Superclasse).
+                        Isso promove o reaproveitamento de código. Em Java, usamos a palavra-chave <code>extends</code>.
                     </p>
-
-                    <h3 style="margin-top: 40px;">Sockets: O Canal de Comunicação</h3>
                     <p>
-                        Um <strong>Socket</strong> é como um plugue de telefone. Para haver uma ligação, precisamos de
-                        dois sockets conectados:
-                        um no cliente e outro no servidor.
+                        <strong>Importante:</strong> Java não suporta herança múltipla de classes (uma classe só pode
+                        ter um pai).
                     </p>
 
                     <pre><code class="language-java">
-// --- SERVIDOR (Ouve na porta 5000) ---
-ServerSocket server = new ServerSocket(5000);
-System.out.println("Aguardando conexão...");
+class Animal {
+    void comer() {
+        System.out.println("Comendo...");
+    }
+}
 
-Socket socket = server.accept(); // Bloqueia até alguém conectar
-System.out.println("Cliente conectou!");
-
-// --- CLIENTE (Conecta no localhost:5000) ---
-Socket socket = new Socket("127.0.0.1", 5000);
+// Cachorro herda de Animal
+class Cachorro extends Animal {
+    void latir() {
+        System.out.println("Au Au!");
+    }
+}
                     </code></pre>
 
-                    <h3 style="margin-top: 40px;">Trocando Mensagens</h3>
+                    <h3 style="margin-top: 40px;">Polimorfismo</h3>
                     <p>
-                        Uma vez conectados, usamos <strong>Streams</strong> (Input e Output) para enviar e receber
-                        dados, exatamente como fazemos com arquivos.
+                        Significa "muitas formas". É a capacidade de tratar objetos de subclasses diferentes como se
+                        fossem da superclasse genérica.
+                    </p>
+
+                    <h4 style="color: var(--text-light); margin-top: 20px;">1. Sobrescrita (Overriding)</h4>
+                    <p>
+                        Quando a subclasse redefine um método da superclasse. Usamos a anotação <code>@Override</code>.
+                        A assinatura do método deve ser idêntica.
+                    </p>
+
+                    <h4 style="color: var(--text-light); margin-top: 20px;">2. Sobrecarga (Overloading)</h4>
+                    <p>
+                        Ter vários métodos com o <strong>mesmo nome</strong> na mesma classe, mas com <strong>parâmetros
+                            diferentes</strong>.
                     </p>
 
                     <pre><code class="language-java">
-// Enviando dados (Lado A)
-PrintStream saida = new PrintStream(socket.getOutputStream());
-saida.println("Olá do Java!");
-
-// Recebendo dados (Lado B)
-Scanner entrada = new Scanner(socket.getInputStream());
-String mensagem = entrada.nextLine();
-System.out.println("Recebi: " + mensagem);
+class Calculadora {
+    // Sobrecarga: Somar inteiros
+    int somar(int a, int b) { return a + b; }
+    
+    // Sobrecarga: Somar decimais
+    double somar(double a, double b) { return a + b; }
+}
                     </code></pre>
-
-                    <h3 style="margin-top: 40px;">Conceitos Importantes</h3>
-                    <ul style="margin-bottom: 20px;">
-                        <li><strong>Localhost:</strong> Endereço de loopback (127.0.0.1) que aponta para o próprio
-                            computador.</li>
-                        <li><strong>Portas:</strong> Canais lógicos de comunicação. Web usa 80 (HTTP) ou 443 (HTTPS).
-                        </li>
-                        <li><strong>JSON:</strong> Formato leve de troca de dados (texto), muito usado em APIs REST
-                            modernas em vez de serialização nativa.</li>
-                    </ul>
                 </div>
 
                 <aside>
                     <div class="sidebar-card">
-                        <h3>Protocolos</h3>
+                        <h3>Conceitos Chave</h3>
                         <div class="key-point">
-                            <i data-lucide="check-circle"></i>
+                            <i data-lucide="git-merge"></i>
                             <div>
-                                <strong>TCP</strong>
-                                <p style="font-size: 0.9rem; margin-bottom: 0;">Confiável, orientado a conexão. Garante
-                                    que os dados cheguem na ordem certa (ex: Web, Email).</p>
+                                <strong>extends</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Palavra-chave para aplicar herança.</p>
                             </div>
                         </div>
                         <div class="key-point">
-                            <i data-lucide="zap"></i>
+                            <i data-lucide="arrow-up-circle"></i>
                             <div>
-                                <strong>UDP</strong>
-                                <p style="font-size: 0.9rem; margin-bottom: 0;">Rápido, sem conexão. Pode perder
-                                    pacotes. Usado em jogos e streaming de vídeo.</p>
+                                <strong>super</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Referência à superclasse (pai). Usado
+                                    para chamar construtores ou métodos do pai.</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <i data-lucide="refresh-ccw"></i>
+                            <div>
+                                <strong>Upcasting</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Tratar uma subclasse como superclasse
+                                    (ex: <code>Animal a = new Cachorro();</code>).</p>
                             </div>
                         </div>
                     </div>

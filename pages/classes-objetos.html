@@ -155,7 +155,8 @@ public class Heroi {
 
                     <h3 style="margin-top: 40px;">Criando e Usando Objetos</h3>
                     <p>Agora que temos o molde, vamos criar os heróis na memória do computador usando a palavra-chave
-                        <code>new</code>.</p>
+                        <code>new</code>.
+                    </p>
 
                     <pre><code class="language-java">
 public class Main {
@@ -173,7 +174,55 @@ public class Main {
         heroi2.subirNivel();
     }
 }
+                    <h3 style="margin-top: 40px;">Aprofundando: Construtores e 'this'</h3>
+                    <p>
+                        O <strong>Construtor</strong> é um método especial que tem o mesmo nome da classe e não retorna nada (nem void). 
+                        Ele é chamado automaticamente quando usamos o <code>new</code>.
+                    </p>
+                    <p>
+                        A palavra-chave <strong>this</strong> é uma referência ao próprio objeto que está sendo executado. 
+                        Ela é muito usada para diferenciar atributos da classe de parâmetros do método quando eles têm o mesmo nome.
+                    </p>
+                    <pre><code class="language-java">
+public class Pessoa {
+    String nome;
+
+    // Construtor Padrão (sem argumentos)
+    public Pessoa() {
+        this.nome = "Anônimo";
+    }
+
+    // Sobrecarga de Construtor (Overloading)
+    public Pessoa(String nome) {
+        this.nome = nome; // 'this.nome' é o atributo, 'nome' é o parâmetro
+    }
+}
                     </code></pre>
+
+                    <h3 style="margin-top: 40px;">Gerenciamento de Memória</h3>
+                    <div class="card" style="background: rgba(30, 41, 59, 0.5); margin-top: 20px;">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 20px;">
+                                <strong style="color: #fbbf24;">Stack (Pilha)</strong>
+                                <p style="margin-bottom: 0; font-size: 0.95rem;">Armazena chamadas de métodos e
+                                    variáveis locais (primitivos e referências).</p>
+                            </li>
+                            <li style="margin-bottom: 20px;">
+                                <strong style="color: #34d399;">Heap (Monte)</strong>
+                                <p style="margin-bottom: 0; font-size: 0.95rem;">Onde os <strong>Objetos</strong> reais
+                                    vivem. Quando você faz <code>new Heroi()</code>, o herói nasce aqui.</p>
+                            </li>
+                            <li>
+                                <strong style="color: #f87171;">Garbage Collector (Coletor de Lixo)</strong>
+                                <p style="margin-bottom: 0; font-size: 0.95rem;">
+                                    Em C++, você precisa destruir objetos manualmente. Em Java, o <strong>GC</strong>
+                                    passa periodicamente na Heap
+                                    e remove objetos que não têm mais nenhuma referência apontando para eles, liberando
+                                    memória automaticamente.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <aside>
@@ -199,7 +248,8 @@ public class Main {
                             <div>
                                 <strong>Instanciação</strong>
                                 <p style="font-size: 0.9rem; margin-bottom: 0;">Ato de criar um objeto usando
-                                    <code>new</code>.</p>
+                                    <code>new</code>.
+                                </p>
                             </div>
                         </div>
                     </div>
