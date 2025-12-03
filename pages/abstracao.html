@@ -4,150 +4,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abstração - POO Java</title>
+    <title>Abstração | POO Masterclass</title>
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .content-section {
-            padding: 60px 0;
+        .page-header {
+            padding: 120px 0 60px;
+            background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.15), transparent 40%);
         }
 
-        .code-block {
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: monospace;
-            color: #e2e8f0;
-            margin: 20px 0;
-            border: 1px solid #334155;
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 60px;
+            margin-top: 60px;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            text-decoration: none;
-            margin-bottom: 40px;
-            font-weight: 600;
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .back-link:hover {
-            text-decoration: underline;
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            position: sticky;
+            top: 40px;
         }
 
-        .concept-card {
-            max-width: 100%;
-            cursor: default;
-            transform: none;
+        .key-point {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
         }
 
-        .concept-card:hover {
-            transform: none;
-            box-shadow: none;
-            border-color: var(--border-color);
-        }
-
-        ul {
-            margin-left: 20px;
-            color: var(--text-gray);
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
+        .key-point i {
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 4px;
         }
     </style>
 </head>
 
 <body>
-    <section class="hero" style="min-height: 40vh;">
-        <div class="hero-background"></div>
+    <!-- Navigation -->
+    <nav style="position: absolute; top: 40px; left: 0; right: 0; z-index: 100;">
         <div class="container">
-            <a href="../index.html" class="back-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7" />
-                </svg>
+            <a href="../index.html" class="btn btn-secondary" style="padding: 10px 20px;">
+                <i data-lucide="arrow-left"></i>
                 Voltar para Home
             </a>
-            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 10px;">Abstração</h1>
-            <p class="hero-subtitle">Simplificando a complexidade.</p>
         </div>
-    </section>
+    </nav>
 
-    <section class="content-section">
+    <!-- Header -->
+    <header class="page-header">
         <div class="container">
-            <div class="concept-card">
-                <h2>O que é?</h2>
-                <p><strong>Abstração</strong> é o processo de focar apenas nas características essenciais de um objeto,
-                    ignorando detalhes de implementação menos importantes para o contexto atual. Em Java, a abstração é
-                    alcançada principalmente através de <strong>Classes Abstratas</strong> e
-                    <strong>Interfaces</strong>.</p>
-                <p>Uma classe abstrata não pode ser instanciada diretamente; ela serve como um modelo base para outras
-                    classes.</p>
+            <div class="section-tag"
+                style="color: var(--accent); border-color: rgba(6, 182, 212, 0.2); background: rgba(6, 182, 212, 0.1);">
+                Design</div>
+            <h1 class="hero-title">Abstração</h1>
+            <p class="hero-subtitle">Simplificando a complexidade do mundo real</p>
+        </div>
+    </header>
 
-                <h3>Exemplo em Java</h3>
-                <div class="code-block">
-                    <pre>
-// Classe Abstrata: Define um conceito genérico
-abstract class FormaGeometrica {
+    <!-- Main Content -->
+    <section class="page-content" style="padding-bottom: 100px;">
+        <div class="container">
+
+            <div class="content-grid">
+                <div class="main-text">
+                    <h2>O Poder da Simplificação</h2>
+                    <p>
+                        Quando você dirige um carro, você não precisa saber como o motor de combustão interna funciona,
+                        como a injeção eletrônica calcula a mistura de ar/combustível ou como o diferencial distribui o
+                        torque.
+                        Você só precisa saber usar o volante, os pedais e o câmbio.
+                    </p>
+                    <p>
+                        Isso é <strong>Abstração</strong>: esconder os detalhes complexos de implementação e expor
+                        apenas uma interface simples e essencial para o usuário.
+                    </p>
+
+                    <h3 style="margin-top: 40px;">Classes Abstratas</h3>
+                    <p>
+                        Em Java, usamos a palavra-chave <code>abstract</code> para criar classes que não podem ser
+                        instanciadas diretamente.
+                        Elas servem como modelos incompletos para outras classes.
+                    </p>
+
+                    <pre><code class="language-java">
+// Classe Abstrata: Define o conceito genérico de "Forma"
+abstract class Forma {
     String cor;
     
-    // Método abstrato: As subclasses SÃO OBRIGADAS a implementar
+    // Método abstrato: Não tem corpo!
+    // As subclasses SÃO OBRIGADAS a implementar isso.
     abstract double calcularArea();
     
-    // Método concreto: Já tem implementação e pode ser herdado
-    void exibirCor() {
-        System.out.println("Cor: " + cor);
+    // Método concreto: Já funciona e é herdado por todos
+    void mostrarCor() {
+        System.out.println("A cor é " + cor);
     }
 }
 
-// Classe Concreta
-class Circulo extends FormaGeometrica {
+class Circulo extends Forma {
     double raio;
     
-    Circulo(double raio, String cor) {
-        this.raio = raio;
-        this.cor = cor;
-    }
-    
+    // Implementação obrigatória
     @Override
     double calcularArea() {
         return Math.PI * raio * raio;
     }
 }
+                    </code></pre>
 
-// Classe Concreta
-class Retangulo extends FormaGeometrica {
-    double largura, altura;
-    
-    Retangulo(double l, double a, String cor) {
-        this.largura = l;
-        this.altura = a;
-        this.cor = cor;
-    }
-    
+                    <h3 style="margin-top: 40px;">Interfaces</h3>
+                    <p>
+                        Uma <strong>Interface</strong> é como um contrato. Ela define <em>o que</em> deve ser feito, mas
+                        não <em>como</em>.
+                        Uma classe pode implementar múltiplas interfaces (diferente de herança, onde só pode estender
+                        uma classe).
+                    </p>
+
+                    <pre><code class="language-java">
+interface Pagavel {
+    void processarPagamento(double valor);
+}
+
+class CartaoCredito implements Pagavel {
     @Override
-    double calcularArea() {
-        return largura * altura;
+    public void processarPagamento(double valor) {
+        System.out.println("Pagando R$" + valor + " no crédito.");
     }
 }
-</pre>
+
+class Pix implements Pagavel {
+    @Override
+    public void processarPagamento(double valor) {
+        System.out.println("Transferindo R$" + valor + " via Pix.");
+    }
+}
+                    </code></pre>
                 </div>
 
-                <h3>Pontos Chave</h3>
-                <ul>
-                    <li><strong>abstract:</strong> Palavra-chave para definir classes e métodos abstratos.</li>
-                    <li><strong>Interface:</strong> Um contrato que define um conjunto de métodos que uma classe deve
-                        implementar. É um nível mais alto de abstração (100% abstrata até o Java 7).</li>
-                    <li><strong>Foco no "O Que":</strong> A abstração define O QUE um objeto faz, não COMO ele faz.</li>
-                </ul>
+                <aside>
+                    <div class="sidebar-card">
+                        <h3>Conceitos Chave</h3>
+                        <div class="key-point">
+                            <i data-lucide="layers"></i>
+                            <div>
+                                <strong>Foco no Essencial</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Ignora detalhes irrelevantes para o
+                                    contexto.</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <i data-lucide="file-code"></i>
+                            <div>
+                                <strong>Contratos</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Interfaces garantem que certas
+                                    funcionalidades existam.</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <i data-lucide="git-branch"></i>
+                            <div>
+                                <strong>Polimorfismo</strong>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Abstração é a base para o polimorfismo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Univesp. POO Masterclass.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
